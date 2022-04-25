@@ -1,0 +1,58 @@
+div h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bot-container {
+    background-color: Transparent;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0rem;
+    right: 0rem;
+    height: 40rem;
+    width: 22rem;
+}
+
+.bot-app {
+    height: 95%;
+    width: 90%;
+    border-radius: 0.4rem;
+    background-color: #eff2fa;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+.bot-display-enter {
+    position: fixed;
+    bottom: -100rem;
+    right: 0rem;
+    opacity: 0;
+}
+
+.bot-display-enter-active {
+    position: fixed;
+    bottom: 0rem;
+    right: 0rem;
+    opacity: 1;
+    transition: all 1000ms;
+}
+
+.bot-display-exit {
+    position: fixed;
+    bottom: 0rem;
+    right: 0rem;
+}
+
+.bot-display-exit-active {
+    position: fixed;
+    bottom: -100rem;
+    right: 0rem;
+    opacity: 0;
+    transition: all 2000ms;
+}

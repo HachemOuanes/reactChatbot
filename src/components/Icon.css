@@ -1,0 +1,64 @@
+.icon-container {
+    background-color: Transparent;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    bottom: 0rem;
+    right: 0rem;
+    height: 8rem;
+    width: 8rem;
+}
+
+
+.icon-image {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    left: 2rem;
+}
+
+.icon-button {
+    all: unset;
+    cursor: pointer;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    position: relative;
+    right: 2rem;
+}
+
+.icon {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+}
+
+
+.icon-display-enter,
+.icon-display-appear {
+
+    position: fixed;
+    bottom: -30rem;
+    right: 0rem;
+}
+
+.icon-display-enter-active,
+.icon-display-appear-active {
+    transform: rotate(360deg);
+    position: fixed;
+    bottom: 0rem;
+    right: 0rem;
+    transition: all 1000ms;
+}
+
+.icon-display-exit {
+    position: fixed;
+    bottom: 0rem;
+    right: 0rem;
+}
+
+.icon-display-exit-active {
+    transform: rotate(90deg);
+    position: fixed;
+    bottom: -10rem;
+    right: 0rem;
+    transition: all 1000ms;
+}

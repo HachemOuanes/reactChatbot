@@ -1,0 +1,82 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d9dee7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d9dee7;
+}
+
+.feed {
+    height: 73%;
+    width: 100%;
+    background-color: transparent;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.feed ul {
+    all: unset;
+    height: auto;
+    width: 90%;
+    padding-bottom: 2rem;
+    padding-top: 0.5rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.self-message-container {
+    right: -10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.bot-message-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.self-message {
+    padding: 0.8rem;
+    margin: 0.3rem;
+    border-radius: 0.8rem 0.8rem 0rem 0.8rem;
+    background-color: rgb(10, 229, 229);
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 400;
+}
+
+.bot-message {
+    padding: 0.8rem;
+    margin: 0.3rem;
+    border-radius: 0.8rem 0.8rem 0.8rem 0rem;
+    background-color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+
+.last-message-appear {
+    opacity: 0;
+}
+
+.last-message-appear-active {
+    opacity: 1;
+    transition: all 1000ms;
+}
