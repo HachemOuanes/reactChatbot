@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Feed.css'
 import { CSSTransition } from 'react-transition-group'
 
@@ -12,11 +12,13 @@ type Props = {
 };
 
 const Feed: React.FC<Props> = ({ messageState }) => {
-    useEffect(() => {
-        var element = document.getElementById('feed');
-        element ? element.scrollTop = element.scrollHeight : null;
-    });
     const [messages, setMessage] = messageState;
+    const refContainer = useRef<HTMLDivElement>(null);
+
+
+    useEffect(() => {
+        refContainer.current ? refContainer.current.scrollTop = refContainer.current.scrollHeight : null;
+    });
 
     // Delayed Rendering 
 
@@ -31,7 +33,7 @@ const Feed: React.FC<Props> = ({ messageState }) => {
     // }, [messages]);
 
     return (
-        <div className='feed' id='feed'>
+        <div className='feed' id='feed' ref={refContainer}>
             <ul className="message-list">
                 {messages.map((message, index) => {
                     if (message.user == "self") {

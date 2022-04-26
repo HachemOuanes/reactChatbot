@@ -38,13 +38,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #d9dee7;
+}
+
+.submit-button-highlighted {
+    all: unset;
+    cursor: pointer;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    height: 1.9rem;
+    width: 1.9rem;
+    border-radius: 5rem;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(14, 237, 244);
-
 }
 
-.submit-button:hover {
-    background-color: rgb(14, 220, 244);
-}
+
 
 .submit-icon {
     height: 1.3rem;
