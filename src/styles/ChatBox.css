@@ -41,18 +41,7 @@
     background-color: #d9dee7;
 }
 
-.submit-button-highlighted {
-    all: unset;
-    cursor: pointer;
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    height: 1.9rem;
-    width: 1.9rem;
-    border-radius: 5rem;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.highlighted {
     background-color: rgb(14, 237, 244);
 }
 

@@ -12,14 +12,17 @@ type Props = {
 };
 
 const Bot: React.FC<Props> = ({ botState }) => {
-    const [display, setDisplay] = botState;
-
     const messages: Array<message> = [{
         user: "bot",
         text: "Hello there my friend. my name is Optimus 🤖. How can I help you today?",
         date: new Date()
     }];
+
+    const [display, setDisplay] = botState;
     const [message, setMessage] = useState(messages);
+    const [loading, setLoading] = useState(false);
+
+
     return (
         <CSSTransition
             in={display}
@@ -29,8 +32,8 @@ const Bot: React.FC<Props> = ({ botState }) => {
             <div className='bot-container'>
                 <div className='bot-app'>
                     <Dock botState={botState} />
-                    <Feed messageState={[message, setMessage]} />
-                    <ChatBox messageState={[message, setMessage]} />
+                    <Feed messageState={[message, setMessage]} loadingState={[loading, setLoading]} />
+                    <ChatBox messageState={[message, setMessage]} loadingState={[loading, setLoading]} />
                 </div>
             </div>
         </CSSTransition>

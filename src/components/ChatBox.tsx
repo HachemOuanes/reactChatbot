@@ -5,29 +5,31 @@ import botService from '../services/botService'
 import { message } from '../types/message.type'
 type Props = {
     messageState: [message[], React.Dispatch<React.SetStateAction<message[]>>]
+    loadingState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 };
 
-const ChatBox: React.FC<Props> = ({ messageState }) => {
+const ChatBox: React.FC<Props> = ({ messageState, loadingState }) => {
     const refMessage = useRef<string>("");
     const refInput = useRef<HTMLInputElement>(null);
     const [messages, setMessage] = messageState;
     const [style, setStyle] = useState("submit-button");
+    const [loading, setLoading] = loadingState;
+
 
     const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
-        const messageObject = {
+        setStyle('submit-button');
+        const messageObject: message = {
             user: "self",
             text: refMessage.current.toString(),
             date: new Date()
         }
         setMessage(messages => [...messages, messageObject]);
-        const responseObject = {
-            user: "bot",
-            text: "",
-            date: new Date()
-        }
+        setLoading(true);
+        
         botService(refMessage.current.toString())
             .then(responseObject => {
+                setLoading(false);
                 setMessage(messages => [...messages, responseObject])
             })
 
@@ -38,11 +40,9 @@ const ChatBox: React.FC<Props> = ({ messageState }) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
         refMessage.current = event.target.value;
-        refMessage.current == "" ? setStyle('submit-button') : setStyle('submit-button-highlighted')
+        refMessage.current == "" ? setStyle('submit-button') : setStyle('submit-button highlighted')
     }
-    useEffect(() => {
-        setStyle('submit-button');
-    }, [messages])
+
 
     return (
         <div className='chatbox'>

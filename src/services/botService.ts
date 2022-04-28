@@ -9,7 +9,7 @@ const botService = (input: string) => {
         text: "",
         date: new Date()
     }
-    var config = {  
+    var config = {
         headers: {
             'content-type': 'application/json',
             'X-RapidAPI-Host': 'google-search-5.p.rapidapi.com',
@@ -32,7 +32,7 @@ const botService = (input: string) => {
         .post('https://google-search-5.p.rapidapi.com/google/organic-search', postData, config)
         .then(response => {
             responseObject.text = response.data.data.organic[0].snippet;
-            responseObject.url = response.data.data.organic[0].url;
+            // responseObject.url = response.data.data.organic[0].url;
             return responseObject;
         })
         .catch(error => {

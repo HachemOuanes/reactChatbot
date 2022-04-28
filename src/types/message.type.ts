@@ -3,7 +3,8 @@ type message = {
     text: string,
     date: Date,
     image?: string,
-    url?: string
+    url?: string,
+    loading?: boolean
 }
 
 export type { message }
