@@ -1,5 +1,5 @@
 import React from 'react';
-import './Dock.css'
+import '../styles//Dock.css'
 import back from '../assets/back-arrow.svg'
 
 type Props = {

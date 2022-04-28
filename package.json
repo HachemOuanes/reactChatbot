@@ -6,7 +6,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --open --mode development --hot",
-    "webpack": "webpack serve"
+    "webpack": "webpack serve",
+    "service": "ts-node src/services/botService.ts"
   },
   "keywords": [],
   "author": "",

@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Feed.css'
+import '../styles//Feed.css'
 import { CSSTransition } from 'react-transition-group'
+import { message } from '../types/message.type'
+import logo from '../assets/chatbot-background.png'
 
-type message = {
-    user: string,
-    text: string,
-    date: Date
-}
 type Props = {
     messageState: [message[], React.Dispatch<React.SetStateAction<message[]>>]
 };
@@ -14,6 +11,12 @@ type Props = {
 const Feed: React.FC<Props> = ({ messageState }) => {
     const [messages, setMessage] = messageState;
     const refContainer = useRef<HTMLDivElement>(null);
+    const openInNewTab = (url: string) => {
+        setTimeout(() => {
+            const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+            if (newWindow) newWindow.opener = null
+        }, 2000)
+    }
 
 
     useEffect(() => {
@@ -39,6 +42,7 @@ const Feed: React.FC<Props> = ({ messageState }) => {
                     if (message.user == "self") {
                         return (
                             <div className='self-message-container'>
+                                <div className='message-date'>{message.date.toLocaleTimeString('en-US')}</div>
                                 <li className='self-message'>
                                     {message.text}
                                 </li>
@@ -47,6 +51,7 @@ const Feed: React.FC<Props> = ({ messageState }) => {
                     }
                     else {
                         if (index == messages.length - 1) {
+                            // message.url ? openInNewTab(message.url) : null
                             return (
                                 <CSSTransition
                                     in={true}
@@ -56,8 +61,10 @@ const Feed: React.FC<Props> = ({ messageState }) => {
                                     appear
                                 >
                                     <div className='bot-message-container'>
+                                        <div className='message-date'>{message.date.toLocaleTimeString('en-US')}</div>
                                         <li className='bot-message'>
                                             {message.text}
+                                            {/* <img src={message.image} style={{ width: "100%" }}></img> */}
                                         </li>
                                     </div>
                                 </CSSTransition>
@@ -66,8 +73,10 @@ const Feed: React.FC<Props> = ({ messageState }) => {
                         else {
                             return (
                                 <div className='bot-message-container'>
+                                    <div className='message-date'>{message.date.toLocaleTimeString('en-US')}</div>
                                     <li className='bot-message'>
                                         {message.text}
+                                        {/* <img src={message.image} style={{ width: "100%" }}></img> */}
                                     </li>
                                 </div>
                             )

@@ -1,12 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import send from '../assets/send.png'
-import './ChatBox.css'
+import '../styles/ChatBox.css'
 import botService from '../services/botService'
-type message = {
-    user: string,
-    text: string,
-    date: Date
-}
+import { message } from '../types/message.type'
 type Props = {
     messageState: [message[], React.Dispatch<React.SetStateAction<message[]>>]
 };
@@ -24,17 +20,16 @@ const ChatBox: React.FC<Props> = ({ messageState }) => {
             text: refMessage.current.toString(),
             date: new Date()
         }
+        setMessage(messages => [...messages, messageObject]);
         const responseObject = {
             user: "bot",
             text: "",
             date: new Date()
         }
         botService(refMessage.current.toString())
-            .then(response => {
-                responseObject.text = response;
+            .then(responseObject => {
                 setMessage(messages => [...messages, responseObject])
             })
-        setMessage(messages => [...messages, messageObject]);
 
         refInput.current ? refInput.current.value = "" : null
         console.log(`👱 : ${refMessage.current}`);

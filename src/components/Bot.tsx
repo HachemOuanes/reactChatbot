@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { message } from '../types/message.type'
 import Feed from './Feed'
 import ChatBox from './ChatBox'
 import Dock from './Dock'
-import './Bot.css'
+import '../styles//Bot.css'
 
-type message = {
-    user: string,
-    text: string,
-    date: Date
-}
+
 type Props = {
     botState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 };

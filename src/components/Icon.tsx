@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './Icon.css';
+import '../styles//Icon.css';
 import Logo from "../assets/chatbot-logo.png";
 
 type Props = {

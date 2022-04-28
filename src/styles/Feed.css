@@ -72,6 +72,12 @@
     font-weight: 400;
 }
 
+.message-date {
+
+    font-size: 10px;
+    color: rgb(191, 194, 197);
+}
+
 .last-message-appear {
     opacity: 0;
 }
