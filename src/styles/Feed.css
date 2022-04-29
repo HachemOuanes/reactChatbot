@@ -15,6 +15,7 @@
 }
 
 .feed {
+
     height: 73%;
     width: 100%;
     background-color: transparent;
@@ -29,12 +30,13 @@
     all: unset;
     height: auto;
     width: 90%;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     padding-top: 0.5rem;
     list-style-type: none;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    overflow: hidden
 }
 
 .self-message-container {
@@ -104,14 +106,14 @@
 .loading-dot {
     display: inline-block;
     position: relative;
-    background-color: rgba(10, 229, 229, 0.661);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10rem;
     margin: 0.2rem;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.3rem;
+    height: 0.3rem;
     animation-name: load-translation;
     animation-delay: 0;
-    animation-duration: 1.2s;
+    animation-duration: 1.8s;
     animation-iteration-count: infinite;
 }
 
@@ -120,11 +122,11 @@
 }
 
 .dot-two {
-    animation-delay: 0.08s;
+    animation-delay: 0.06s;
 }
 
 .dot-three {
-    animation-delay: 0.16s;
+    animation-delay: 0.12s;
 }
 
 
@@ -136,10 +138,14 @@
 
 
 .last-message-appear {
+    position: relative;
     opacity: 0;
+    top: 10rem;
 }
 
 .last-message-appear-active {
+    position: relative;
     opacity: 1;
-    transition: all 1000ms;
+    top: 0rem;
+    transition: all 300ms;
 }
