@@ -1,21 +1,15 @@
 # reactChatbot
 
-
-
 ## Description
 
 <img title="" src="./src/assets/chatbot-logo.png" alt="chatbot-logo.png" width="50">   A modern web chatbot widget extensible on any desirable website.
 
 This project was developed using Typscript programming language and the React Library.
 
-
-
 ## Snippets
 
 <img title="" src="./src/assets/cahtbot-image-all.png" alt="cahtbot-image2.png" width="722" data-align="inline">
 
-
-
 ## Develop
 
 install node dependecies :
@@ -29,24 +23,6 @@ run the widget on development server :
 ```shell
 npm run dev
 ```
-
-
-
-## Develop
-
-install node dependecies :
-
-```shell
-npm install
-```
-
-run the widget on development server :
-
-```shell
-npm run dev
-```
-
-
 
 ## Build
 
@@ -63,7 +39,7 @@ a javascript file will be generated after build is complete under the name "widg
 <script src="$path_to_widget.bundle.js"></script>
 ```
 
-#### 
+####
 
 ## Services
 
@@ -73,7 +49,7 @@ currently the chatbot fetches data from google search API but it can be tweaked 
 npm run service
 ```
 
-## 
+##
 
 ## Copyright
 
