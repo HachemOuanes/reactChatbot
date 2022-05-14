@@ -2,7 +2,7 @@
 
 ## Description
 
-
+A modern web chatbot widget extensible on any desirable website. This project was developed using Typscript programming language and the React Library.
 This project was developed using Typscript programming language and the React Library.
 
 ## Snippets
