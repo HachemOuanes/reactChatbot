@@ -2,7 +2,6 @@
 
 ## Description
 
-<img title="" src="./src/assets/chatbot-logo.png" alt="chatbot-logo.png" width="50">   A modern web chatbot widget extensible on any desirable website.
 
 This project was developed using Typscript programming language and the React Library.
 
